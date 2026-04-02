@@ -1,0 +1,16 @@
+# Quartus Files
+**/db/
+**/incremental_db/
+**/output_files/
+**/simulation/
+**/*.bak
+**/*.qws
+
+# ModelSim Temp Files
+**/*.vcd
+
+# Misc
+*.zip
+*.json
+*.txt
+

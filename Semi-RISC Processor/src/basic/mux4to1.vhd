@@ -1,0 +1,24 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+-- 32-bit 4-to-1 Multiplexer used for signal routing within the Datapath.
+
+ENTITY mux4to1 IS
+    PORT ( 
+        s              : IN  STD_LOGIC_VECTOR(1 DOWNTO 0);
+        X1, X2, X3, X4 : IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
+        f              : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+    );
+END mux4to1;
+
+ARCHITECTURE behavior OF mux4to1 IS
+BEGIN
+
+    WITH s SELECT
+        f <= X1 WHEN "00",
+             X2 WHEN "01",
+             X3 WHEN "10",
+             X4 WHEN "11",
+             (OTHERS => '0') WHEN OTHERS;
+                 
+END behavior;
