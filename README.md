@@ -76,35 +76,11 @@ Instruction Set Example:
 ```text
 Semi-RISC_Processor/
 ├── src/                        
-│   ├── basic/                  # Basic Level
-│   │   ├── fulladd.vhd         # 1-bit Full Adder
-│   │   ├── LZE.vhd             # Lower Zero Extender
-│   │   ├── UZE.vhd             # Upper Zero Extender
-│   │   ├── RED.vhd             # Bit Reducer
-│   │   ├── mux2to1.vhd         # 2-to-1 Multiplexer
-│   │   └── mux4to1.vhd         # 4-to-1 Multiplexer
-│   ├── units/                  # Intermediate Level
-│   │   ├── add.vhd             # 32-bit Incrementer
-│   │   ├── adder4.vhd          # 4-bit Ripple-Carry Adder
-│   │   ├── adder16.vhd         # 16-bit Ripple-Carry Adder
-│   │   ├── adder32.vhd         # 32-bit Ripple-Carry Adder
-│   │   ├── register32.vhd      # 32-bit General Purpose Register
-│   │   ├── alu.vhd             # Arithmetic Logic Unit
-│   │   ├── pc.vhd              # Program Counter
-│   │   ├── data_mem.vhd        # Synchronous RAM
-│   │   └── reset_circuit.vhd   # Debounced initialization
-│   └── cpu/                    # Top Level
-│       ├── cpu.vhd             # Structural Top-level
-│       ├── control_new.vhd     # Instruction decoder
-│       └── datapath.vhd        # Component interconnect
-├── data/                       # Pre-load Assets
-|   ├── system_memory.vhd       # Wizard-generated RAM
-|   ├── system_memory.qip       # Quartus IP Project File
-│   └── system_memory.mif       # Memory Initialization File
-├── sim/                        # Verification
-|   ├── reset_circuit.vwf       # Reset Circuitry Simulation Waveform
-|   ├── cpu_test_sim.vwf        # Test Sim Simulation Waveform
-│   └── cpu_test_sim.vhd        # Simulation wrapper
+│   ├── basic/                  # Basic Level components (LZE, mux2to1, fulladd, etc)
+│   ├── units/                  # Intermediate Level components (adder32, register32, alu, pc, data_mem, etc)
+│   └── cpu/                    # Top Level components (top-level cpu, control, datapath)
+├── data/                       # Pre-load Assets (system_memory.vhd, .qip, .mif)
+├── sim/                        # Verification (waveform files)
 └── quartus/                    # Project files (.qpf, .qsf)
 ```
 ## Architectural Features
